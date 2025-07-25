@@ -360,6 +360,8 @@ class ldChan(object):
             dtype = safe_get([None, np.float16, None, np.float32], dtype - 1)
         elif dtype_a in [0, 0x03, 0x05]:
             dtype = safe_get([None, np.int16, None, np.int32], dtype - 1)
+        elif dtype_a in [0x06]:
+            dtype = safe_get([None, np.uint16, None, np.uint32], dtype - 1)
         else:
             dtype = None
 
